@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+
+<main class="flex w-full h-full shadow-lg rounded-3xl">
+  <section class="flex flex-col w-4/12 h-full pt-3 overflow-y-scroll bg-gray-50">
+    <ul class="mt-6">
+      <li class="px-3 py-5 transition border-b hover:bg-indigo-100">
+        <a href="#" class="flex items-center justify-between">
+          <h3 class="text-lg font-semibold">{title}</h3>
+          <p class="text-gray-400 text-md"></p>
+        </a>
+        <div class="italic text-gray-400 text-md">	{points} points by {user} {time} | <a href="#">{} comments</a></div>
+      </li>
+    </ul>
+  </section>
+  <section class="flex flex-col w-8/12 px-4 bg-white rounded-r-3xl">
+    <section>
+      <h1 class="text-2xl font-bold">We need UI/UX designer</h1>
+      <article class="mt-8 leading-7 tracking-wider text-gray-500">
+        <p>Hi Akhil,</p>
+        <p>Design and develop enterprise-facing UI and consumer-facing UI as well as
+          REST API
+          backends.Work with
+          Product Managers and User Experience designers to create an appealing user experience for desktop web and
+          mobile web.</p>
+        <footer class="mt-12">
+          <p>Thanks & Regards,</p>
+          <p>Alexandar</p>
+        </footer>
+      </article>
+    </section>
+    <section class="mt-6 mb-3 border rounded-xl bg-gray-50">
+      <textarea class="w-full p-2 bg-gray-50 rounded-xl" placeholder="Type your reply here..." rows="3"></textarea>
+      <div class="flex items-center justify-between p-2">
+        <button class="w-6 h-6 text-gray-400">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
+          </svg>
+        </button>
+        <button class="px-6 py-2 text-white bg-purple-600 rounded-xl">Reply</button>
+      </div>
+    </section>
+  </section>
+</main>
+
+</body>
+</html>
