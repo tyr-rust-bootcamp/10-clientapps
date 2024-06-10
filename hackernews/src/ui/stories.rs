@@ -35,9 +35,9 @@ pub fn Stories() -> Element {
 
 #[component]
 pub fn StoryItem(story: StoryItem) -> Element {
-    let comments_state = use_context::<Signal<CommentsState>>();
+    let mut comments_state = use_context::<Signal<CommentsState>>();
     // cache of the already loaded comments: Option<StoryData>
-    let full_story = use_signal(|| None);
+    // let full_story = use_signal(|| None);
     rsx! {
       li { class: "px-3 py-5 transition border-b hover:bg-indigo-100",
         a { href: "#", class: "flex items-center justify-between",
@@ -51,7 +51,13 @@ pub fn StoryItem(story: StoryItem) -> Element {
             prevent_default: "onclick",
             onclick: move |event| {
                 info!("Clicked on story: {} with event: {:#?}", story.title, event);
-                load_comments(comments_state, full_story, story.clone())
+                let story = story.clone();
+                async move {
+                    *comments_state.write() = CommentsState::Loading;
+                    if let Ok(story_data) = get_story_comments(story).await {
+                        *comments_state.write() = CommentsState::Loaded(story_data);
+                    }
+                }
             },
             "{story.kids.len()} comments"
           }
@@ -60,6 +66,7 @@ pub fn StoryItem(story: StoryItem) -> Element {
     }
 }
 
+#[allow(unused)]
 async fn load_comments(
     mut comments_state: Signal<CommentsState>,
     mut full_story: Signal<Option<StoryData>>,
