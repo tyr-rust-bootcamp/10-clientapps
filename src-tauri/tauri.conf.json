@@ -1,0 +1,35 @@
+{
+  "productName": "hackernews",
+  "version": "0.0.0",
+  "identifier": "com.tauri.dev",
+  "build": {
+    "beforeDevCommand": "cd hackernews && dx serve --port 8080 --hot-reload",
+    "devUrl": "http://localhost:8080",
+    "beforeBuildCommand": "cd hackernews && dx build --release",
+    "frontendDist": "../hackernews/dist"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "hackernews",
+        "width": 1200,
+        "height": 800
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}
