@@ -37,6 +37,10 @@ jobs:
         with:
           fetch-depth: 0
           submodules: recursive
+      - name: install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install libgtk-3-dev
       - name: Install Rust
         run: rustup toolchain install stable --component llvm-tools-preview
       - name: Install cargo-llvm-cov
