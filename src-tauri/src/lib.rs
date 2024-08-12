@@ -178,7 +178,10 @@ fn setup_menu<R: Runtime>(app: &AppHandle<R>) -> Result<(), tauri::Error> {
             "save" => {}
             "saveas" => {}
             "process" => {}
-            "checkme" => {}
+            "checkme" => {
+                // toggle checkme status and update config and runtime state
+                // for runtime state - Arc<Mutex<State>> / ArcSwap
+            }
             _ => {}
         }
     });
