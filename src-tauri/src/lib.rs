@@ -51,6 +51,7 @@ fn setup(app: &mut App) -> Result<(), Box<dyn std::error::Error>> {
             .content_protected(true);
     }
 
+    #[allow(unused_variables)]
     let webiview = builder.build()?;
 
     #[cfg(debug_assertions)]

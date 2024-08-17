@@ -1,7 +1,7 @@
 {
   "productName": "hackernews",
   "version": "0.0.0",
-  "identifier": "com.tauri.dev",
+  "identifier": "com.acme.hackernews",
   "build": {
     "beforeDevCommand": "cd hackernews && dx serve --port 8080 --hot-reload",
     "devUrl": "http://localhost:8080",
